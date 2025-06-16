@@ -27,3 +27,6 @@ km.set("n", "<leader>tp", ":tabp<CR>")
 km.set("n", "<leader>ee", ":NvimTreeToggle<CR>")
 km.set("n", "<leader>er", ":NvimTreeFocus<CR>")
 km.set("n", "<leader>ef", ":NvimTreeFindFile<CR>")
+
+-- dyslexic remap
+km.set("i", "<C-c>", "<Esc>")
