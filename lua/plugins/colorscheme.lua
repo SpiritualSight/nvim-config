@@ -1,16 +1,17 @@
 return {
-  'bluz71/vim-moonfly-colors',
-  name = 'moonfly', -- Plugin name for identification
-  lazy = false,     -- Load the colorscheme immediately on startup
-  priority = 1000,  -- Ensure the colorscheme loads before other plugins
-  config = function()
-    -- Set any Moonfly-specific options here
-    -- For example, to enable transparent background:
-    -- vim.g.moonflyTransparent = true
-    -- Apply the colorscheme
-    vim.cmd('colorscheme moonfly')
-  end,
-
+  {
+    'bluz71/vim-moonfly-colors',
+    name = 'moonfly', -- Plugin name for identification
+    lazy = false,     -- Load the colorscheme immediately on startup
+    priority = 1000,  -- Ensure the colorscheme loads before other plugins
+    config = function()
+      -- Set any Moonfly-specific options here
+      -- For example, to enable transparent background:
+      vim.g.moonflyTransparent = true
+      -- Apply the colorscheme
+      vim.cmd('colorscheme moonfly')
+    end,
+  },
   -- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",

@@ -13,7 +13,7 @@ km.set('n', '<leader>r', ':!gcc % -o %:r && ./%:r<CR>', { noremap = true, silent
 -- error handling & go def
 km.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 km.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
-km.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+km.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 km.set('n', '<leader>gf', '<cmd>lua vim.lsp.buf.format({async = true})<CR>')
 km.set('v', '<leader>gf', '<cmd>lua vim.lsp.buf.format({async = true})<CR>')
 
@@ -30,3 +30,8 @@ km.set("n", "<leader>ef", ":NvimTreeFindFile<CR>")
 
 -- dyslexic remap
 km.set("i", "<C-c>", "<Esc>")
+
+-- github conflicts
+km.set("n", "<leader>cc", ":GitConflictChooseOurs<CR>")
+km.set("n", "<leader>ic", ":GitConflictChooseTheirs<CR>")
+km.set("n", "<leader>nc", ":GitConflictNextConflict<CR>")
