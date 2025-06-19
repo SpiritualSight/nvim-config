@@ -35,3 +35,7 @@ km.set("i", "<C-c>", "<Esc>")
 km.set("n", "<leader>cc", ":GitConflictChooseOurs<CR>")
 km.set("n", "<leader>ic", ":GitConflictChooseTheirs<CR>")
 km.set("n", "<leader>nc", ":GitConflictNextConflict<CR>")
+-- lazy
+km.set("n", "<leader>ll", ":Lazy<CR>")
+-- git signs
+km.set("n", "<leader>gs", ":Gitsigns toggle_signs")
