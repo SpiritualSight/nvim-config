@@ -10,14 +10,12 @@ return {
         capabilities = capabilities,
         settings = {
           Lua = {
-            completion = {
-              callSnippet = "Replace"
-            }
+            completion = { callSnippet = "Replace" }
           }
         }
       })
 
-      lspconfig.ts_ls.setup({
+      lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
 
@@ -30,15 +28,10 @@ return {
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
         filetypes = {
-          "html",
-          "css",
-          "scss",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "vue",
-          "svelte"
+          "html", "css", "scss",
+          "javascript", "javascriptreact",
+          "typescript", "typescriptreact",
+          "vue", "svelte",
         },
         init_options = {
           userLanguages = {

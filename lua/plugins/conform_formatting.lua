@@ -13,13 +13,23 @@ return {
     },
   },
   opts = {
+    formatters = {
+      google_java_format = {
+        command = "java",
+        args = {
+          "-jar",
+          "/root/google-java-format.jar",
+          "-", -- read from stdin
+        },
+        stdin = true,
+      },
+    },
     formatters_by_ft = {
+      java = { "google_java_format" },
       javascript = { "prettier" },
       typescript = { "prettier" },
-
       javascriptreact = { "prettier" },
       typescriptreact = { "prettier" },
-
       html = { "prettier" },
       css = { "prettier" },
       json = { "prettier" },
@@ -28,7 +38,7 @@ return {
       lua = { "stylua" },
     },
     format_on_save = {
-      timeout_ms = 500,
+      timeout_ms = 1000,
       lsp_fallback = true,
     },
   },
