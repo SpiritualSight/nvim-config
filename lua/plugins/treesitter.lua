@@ -1,7 +1,7 @@
 return {
 	-- https://github.com/nvim-treesitter/nvim-treesitter
 	'nvim-treesitter/nvim-treesitter',
-	event = 'VeryLazy',
+	lazy = false,
 	dependencies = {
 		-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		{
@@ -20,10 +20,13 @@ return {
 		ensure_installed = {
 			'lua',
 			'comment',
+			'go',
+			'gomod',
+			'gowork',
+			'gosum',
 		},
 	},
 	config = function(_, opts)
-		local configs = require("nvim-treesitter.configs")
-		configs.setup(opts)
+		require("nvim-treesitter.configs").setup(opts)
 	end,
 }

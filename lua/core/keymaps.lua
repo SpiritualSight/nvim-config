@@ -39,3 +39,5 @@ km.set("n", "<leader>nc", ":GitConflictNextConflict<CR>")
 km.set("n", "<leader>ll", ":Lazy<CR>")
 -- git signs
 km.set("n", "<leader>gs", ":Gitsigns toggle_signs")
+-- vertical split
+km.set("n", "<leader>vs", ":vertical split<CR>")

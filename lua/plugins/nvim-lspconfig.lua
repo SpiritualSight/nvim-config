@@ -1,13 +1,16 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    event = { "BufRead", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
     config = function()
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      -- nvim 0.11+ API: nvim-lspconfig only ships the `lsp/<name>.lua` defaults,
+      -- these calls layer our overrides on top and start the servers.
+      vim.lsp.config("*", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
+      vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
             completion = { callSnippet = "Replace" }
@@ -15,18 +18,12 @@ return {
         }
       })
 
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
+      vim.lsp.config("clangd", {
         cmd = { "clangd", "--background-index" },
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
       })
 
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
+      vim.lsp.config("tailwindcss", {
         filetypes = {
           "html", "css", "scss",
           "javascript", "javascriptreact",
@@ -41,6 +38,8 @@ return {
           }
         }
       })
+
+      vim.lsp.enable({ "lua_ls", "ts_ls", "clangd", "tailwindcss", "gopls" })
     end
   }
 }

@@ -15,7 +15,9 @@ opt.autoindent = true
 vim.bo.softtabstop = 2
 
 -- Line Wrapping
-opt.wrap = false
+opt.wrap = true
+opt.linebreak = true -- wrap at word boundaries, not mid-word
+opt.breakindent = true -- keep indent on wrapped lines
 
 -- Search Settings
 opt.ignorecase = true

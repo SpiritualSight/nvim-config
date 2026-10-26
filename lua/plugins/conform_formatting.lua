@@ -2,6 +2,11 @@ return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
+  init = function()
+    if vim.text and not vim.text.diff and vim.diff then
+      vim.text.diff = vim.diff
+    end
+  end,
   keys = {
     {
       "<leader>f",
@@ -36,6 +41,7 @@ return {
       markdown = { "prettier" },
       c = { "clang-format" },
       lua = { "stylua" },
+      go = { "goimports", "gofmt" },
     },
     format_on_save = {
       timeout_ms = 1000,
